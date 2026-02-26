@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>台股投資金庫</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+  <header class="container">
+    <hgroup>
+      <h1>台股投資金庫</h1>
+      <p>結構化投資名詞學習卡片</p>
+    </hgroup>
+  </header>
+
+  <div class="container">
+    <nav class="search-bar">
+      <div class="search-row">
+        <input type="search" id="search-input" placeholder="搜尋名詞或定義...">
+        <button id="filter-toggle" class="outline">篩選 ⫶</button>
+      </div>
+      <div id="filter-panel" hidden>
+        <div class="filter-section">
+          <small><strong>分類：</strong></small>
+          <div id="category-chips" class="chips-container"></div>
+        </div>
+        <div class="filter-section">
+          <small><strong>子標籤：</strong></small>
+          <div id="subtag-chips" class="chips-container"></div>
+        </div>
+      </div>
+      <div class="count-row">
+        <span id="count"></span>
+      </div>
+    </nav>
+  </div>
+
+  <main class="container" id="card-container">
+    <p class="status-message">載入中...</p>
+  </main>
+
+  <footer class="container">
+    <small>台股投資金庫 — 結構化學習，穩健投資</small>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
