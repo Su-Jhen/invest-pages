@@ -241,6 +241,30 @@
   color: var(--pico-muted-color);
 }
 
+/* --- Q&A 深度理解 --- */
+.qa-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--pico-muted-border-color);
+}
+
+.qa-item:last-child {
+  border-bottom: none;
+}
+
+.qa-question {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0 0 0.25rem 0;
+  color: var(--pico-color);
+}
+
+.qa-insight {
+  font-size: 0.875rem;
+  color: var(--pico-primary);
+  margin: 0;
+  line-height: 1.5;
+}
+
 /* --- Footer --- */
 footer {
   text-align: center;
