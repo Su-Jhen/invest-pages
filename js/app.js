@@ -164,6 +164,20 @@
       }
     }
 
+    // --- qa (深度理解) ---
+    var qaHTML = '';
+    var qaItems = term.qa || [];
+    if (qaItems.length > 0) {
+      qaHTML = '<details><summary>深度理解</summary>';
+      for (var q = 0; q < qaItems.length; q++) {
+        qaHTML += '<div class="qa-item">'
+          + '<p class="qa-question">Q：' + escapeHTML(qaItems[q].question) + '</p>'
+          + '<p class="qa-insight">&#x1F4A1; ' + escapeHTML(qaItems[q].key_insight) + '</p>'
+          + '</div>';
+      }
+      qaHTML += '</details>';
+    }
+
     // --- related terms ---
     var relatedHTML = '';
     var related = term.related || [];
@@ -180,6 +194,7 @@
       + titleHTML
       + defHTML
       + detailsHTML
+      + qaHTML
       + relatedHTML
       + '</article>';
   }
