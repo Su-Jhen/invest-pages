@@ -31,6 +31,127 @@
       }
     }
   },
+  "edges": [
+    {
+      "source": "net-profit-margin",
+      "target": "roe",
+      "type": "compose",
+      "label": "杜邦因子"
+    },
+    {
+      "source": "asset-turnover",
+      "target": "roe",
+      "type": "compose",
+      "label": "杜邦因子"
+    },
+    {
+      "source": "equity-multiplier",
+      "target": "roe",
+      "type": "compose",
+      "label": "杜邦因子"
+    },
+    {
+      "source": "net-profit-margin",
+      "target": "roa",
+      "type": "compose",
+      "label": "ROA 拆解"
+    },
+    {
+      "source": "asset-turnover",
+      "target": "roa",
+      "type": "compose",
+      "label": "ROA 拆解"
+    },
+    {
+      "source": "eps",
+      "target": "pe-ratio",
+      "type": "compose",
+      "label": "分母"
+    },
+    {
+      "source": "pe-ratio",
+      "target": "peg-ratio",
+      "type": "compose",
+      "label": "分子"
+    },
+    {
+      "source": "bvps",
+      "target": "pb-ratio",
+      "type": "compose",
+      "label": "分母"
+    },
+    {
+      "source": "eps",
+      "target": "roe",
+      "type": "compose",
+      "label": "EPS/BVPS 算法"
+    },
+    {
+      "source": "bvps",
+      "target": "roe",
+      "type": "compose",
+      "label": "EPS/BVPS 算法"
+    },
+    {
+      "source": "dupont-analysis",
+      "target": "roe",
+      "type": "compose",
+      "label": "分析對象"
+    },
+    {
+      "source": "pb-ratio",
+      "target": "pe-ratio",
+      "type": "contrast",
+      "label": "獲利面 vs 資產面"
+    },
+    {
+      "source": "roa",
+      "target": "roe",
+      "type": "contrast",
+      "label": "真本事 vs 放大後"
+    },
+    {
+      "source": "gross-profit-margin",
+      "target": "operating-profit-margin",
+      "type": "sequence",
+      "label": "三率遞進"
+    },
+    {
+      "source": "operating-profit-margin",
+      "target": "net-profit-margin",
+      "type": "sequence",
+      "label": "三率遞進"
+    }
+  ],
+  "groups": [
+    {
+      "id": "dupont-trio",
+      "name": "杜邦三因子",
+      "members": [
+        "net-profit-margin",
+        "asset-turnover",
+        "equity-multiplier"
+      ]
+    },
+    {
+      "id": "income-trio",
+      "name": "損益表三率",
+      "members": [
+        "gross-profit-margin",
+        "operating-profit-margin",
+        "net-profit-margin"
+      ]
+    },
+    {
+      "id": "valuation-trio",
+      "name": "評價三兄弟",
+      "members": [
+        "pe-ratio",
+        "pb-ratio",
+        "peg-ratio"
+      ]
+    }
+  ],
   "terms": [
     {
       "id": "pe-ratio",
