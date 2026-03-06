@@ -89,7 +89,7 @@
   padding: 0.5rem 1rem;
   border: 1px solid var(--pico-muted-border-color);
   background: transparent;
-  color: var(--pico-color);
+  color: var(--pico-secondary);
   cursor: pointer;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
   user-select: none;
