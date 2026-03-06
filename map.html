@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>知識地圖 — 台股投資金庫</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.min.css">
+  <link rel="stylesheet" href="css/map.css">
+</head>
+<body>
+  <nav class="container">
+    <ul>
+      <li><strong>台股投資金庫</strong></li>
+    </ul>
+    <ul>
+      <li><a href="index.html">名詞卡片</a></li>
+      <li><a href="map.html" aria-current="page">知識地圖</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div id="cy"></div>
+
+    <div id="legend" class="legend">
+      <button id="legend-toggle" class="legend-toggle" aria-label="切換圖例">
+        <span class="legend-icon">?</span>
+      </button>
+      <div id="legend-body" class="legend-body">
+        <div class="legend-title">圖例</div>
+        <div class="legend-section">
+          <div class="legend-item">
+            <span class="legend-line legend-compose"></span> 組成/拆解
+          </div>
+          <div class="legend-item">
+            <span class="legend-line legend-contrast"></span> 對比
+          </div>
+          <div class="legend-item">
+            <span class="legend-line legend-sequence"></span> 遞進
+          </div>
+        </div>
+        <div class="legend-section">
+          <div class="legend-item">
+            <span class="legend-dot" style="background:var(--node-color-profit)"></span> 獲利能力
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot" style="background:var(--node-color-valuation)"></span> 評價指標
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="hint" class="hint">雙指縮放 | 拖曳移動 | 點擊節點查看詳情</div>
+
+    <div id="modal" class="modal" hidden>
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="關閉">&times;</button>
+        <h3 id="modal-title"></h3>
+        <p id="modal-en" class="modal-en"></p>
+        <p id="modal-def" class="modal-def"></p>
+        <p id="modal-mnemonic" class="modal-mnemonic"></p>
+        <a id="modal-link" href="#" class="modal-link">查看完整卡片 &rarr;</a>
+      </div>
+    </div>
+
+    <div id="degrade-msg" class="status-message" hidden>
+      知識地圖載入失敗，請重新整理頁面。
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.30.4/dist/cytoscape.min.js"
+          integrity="sha384-H3uzGzTfGHUAumB8+s4GEdfFwzAceN9wCCndN8AXubWKFIPuBSWKKtWDx7RhSf/z"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dagre@0.8.5/dist/dagre.min.js"
+          integrity="sha384-2IH3T69EIKYC4c+RXZifZRvaH5SRUdacJW7j6HtE5rQbvLhKKdawxq6vpIzJ7j9M"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.js"
+          integrity="sha384-u69h9ebXeSjlg6q/rb1zKTRAGu/h8deCl0409xpS/QJctMKnc4M9Fzkm01VOQdeF"
+          crossorigin="anonymous"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>

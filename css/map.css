@@ -1,0 +1,253 @@
+/* ============================================
+   知識地圖 — map.css
+   搭配 Pico CSS v2.1.1 + Cytoscape.js
+   ============================================ */
+
+/* --- CSS Variables (light / dark) --- */
+:root {
+  --node-color-profit: #3b82f6;
+  --node-color-valuation: #22c55e;
+  --node-text-color: #ffffff;
+  --edge-compose: #3b82f6;
+  --edge-contrast: #9ca3af;
+  --edge-sequence: #f97316;
+  --modal-bg: rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --node-color-profit: #60a5fa;
+    --node-color-valuation: #4ade80;
+    --node-text-color: #1e293b;
+    --edge-compose: #60a5fa;
+    --edge-contrast: #6b7280;
+    --edge-sequence: #fb923c;
+  }
+}
+
+/* --- Main layout: no .container, full screen --- */
+main {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+}
+
+/* --- Nav spacing --- */
+nav.container {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0;
+}
+
+/* --- Cytoscape canvas --- */
+#cy {
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+/* --- Legend --- */
+.legend {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 20;
+  font-size: 0.8rem;
+}
+
+.legend-toggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--pico-muted-border-color);
+  background: var(--pico-background-color);
+  color: var(--pico-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.legend-body {
+  display: none;
+  background: var(--pico-background-color);
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  margin-top: 0.375rem;
+  min-width: 140px;
+}
+
+.legend.open .legend-body {
+  display: block;
+}
+
+.legend-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.legend-section {
+  margin-bottom: 0.5rem;
+}
+
+.legend-section:last-child {
+  margin-bottom: 0;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.125rem 0;
+}
+
+.legend-line {
+  width: 24px;
+  height: 0;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.legend-compose {
+  border-top: 2px solid var(--edge-compose);
+}
+
+.legend-contrast {
+  border-top: 2px dashed var(--edge-contrast);
+}
+
+.legend-sequence {
+  border-top: 2px dotted var(--edge-sequence);
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* --- Hint --- */
+.hint {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  background: var(--pico-background-color);
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: 999px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.8rem;
+  color: var(--pico-muted-color);
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.hint.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* --- Modal --- */
+.modal[hidden] {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--modal-bg);
+  touch-action: none;
+}
+
+.modal-content {
+  position: relative;
+  background: var(--pico-background-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  max-width: 90vw;
+  width: 360px;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 101;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--pico-muted-color);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-content h3 {
+  margin-bottom: 0.25rem;
+  padding-right: 2rem;
+}
+
+.modal-en {
+  color: var(--pico-muted-color);
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.modal-def {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.modal-mnemonic {
+  font-size: 0.85rem;
+  color: var(--pico-primary);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.modal-link {
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+/* --- Degrade message --- */
+.status-message {
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 1.1rem;
+  color: var(--pico-muted-color);
+}
+
+/* --- Desktop: legend default open --- */
+@media (min-width: 641px) {
+  .legend {
+    /* auto-open handled in JS */
+  }
+}

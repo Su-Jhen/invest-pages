@@ -178,6 +178,11 @@
       qaHTML += '</details>';
     }
 
+    // --- map link ---
+    var mapLinkHTML = '<div class="card-map-link">'
+      + '<a href="map.html#term-' + escapeHTML(term.id) + '">在地圖中查看</a>'
+      + '</div>';
+
     // --- related terms ---
     var relatedHTML = '';
     var related = term.related || [];
@@ -189,12 +194,13 @@
       relatedHTML += '</div>';
     }
 
-    return '<article class="term-card">'
+    return '<article class="term-card" id="term-' + escapeHTML(term.id) + '">'
       + badgesHTML
       + titleHTML
       + defHTML
       + detailsHTML
       + qaHTML
+      + mapLinkHTML
       + relatedHTML
       + '</article>';
   }
@@ -332,7 +338,26 @@
   }
 
   // ----------------------------------------------------------
-  // 7. Init
+  // 7. Hash scroll
+  // ----------------------------------------------------------
+
+  function handleHashScroll() {
+    var hash = window.location.hash;
+    if (!hash || !hash.startsWith('#term-')) return;
+    var el = document.getElementById(hash.substring(1));
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    el.style.outline = '3px solid var(--pico-primary)';
+    el.style.outlineOffset = '4px';
+    el.style.borderRadius = '0.75rem';
+    setTimeout(function () {
+      el.style.outline = '';
+      el.style.outlineOffset = '';
+    }, 2000);
+  }
+
+  // ----------------------------------------------------------
+  // 8. Init
   // ----------------------------------------------------------
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -357,6 +382,9 @@
 
         document.getElementById('subtag-chips')
           .addEventListener('click', onSubTagChipClick);
+
+        // Hash scroll: index.html#term-{id}
+        handleHashScroll();
       })
       .catch(function () {
         // Error already shown by fetchTerms, nothing else to do

@@ -265,6 +265,15 @@
   line-height: 1.5;
 }
 
+/* --- Map link in card --- */
+.card-map-link {
+  padding-top: 0.5rem;
+}
+
+.card-map-link a {
+  font-size: 0.85rem;
+}
+
 /* --- Footer --- */
 footer {
   text-align: center;
