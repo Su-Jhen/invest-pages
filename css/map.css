@@ -7,6 +7,7 @@
 :root {
   --node-color-profit: #3b82f6;
   --node-color-valuation: #22c55e;
+  --node-color-solvency: #ec4899;
   --node-text-color: #ffffff;
   --edge-compose: #3b82f6;
   --edge-contrast: #9ca3af;
@@ -18,6 +19,7 @@
   :root {
     --node-color-profit: #60a5fa;
     --node-color-valuation: #4ade80;
+    --node-color-solvency: #f472b6;
     --node-text-color: #1e293b;
     --edge-compose: #60a5fa;
     --edge-contrast: #6b7280;

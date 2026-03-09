@@ -22,6 +22,7 @@
   var COLORS = {
     profit:     isDark ? '#60a5fa' : '#3b82f6',
     valuation:  isDark ? '#4ade80' : '#22c55e',
+    solvency:   isDark ? '#f472b6' : '#ec4899',
     nodeText:   isDark ? '#1e293b' : '#ffffff',
     compose:    isDark ? '#60a5fa' : '#3b82f6',
     contrast:   isDark ? '#6b7280' : '#9ca3af',
@@ -32,7 +33,8 @@
 
   var SUB_TAG_COLORS = {
     '獲利能力': COLORS.profit,
-    '評價指標': COLORS.valuation
+    '評價指標': COLORS.valuation,
+    '償債能力': COLORS.solvency
   };
 
   // ----------------------------------------------------------
