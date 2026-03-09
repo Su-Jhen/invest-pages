@@ -20,9 +20,21 @@
   var isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   var COLORS = {
+    // 基本面
     profit:     isDark ? '#60a5fa' : '#3b82f6',
-    valuation:  isDark ? '#4ade80' : '#22c55e',
     solvency:   isDark ? '#f472b6' : '#ec4899',
+    valuation:  isDark ? '#4ade80' : '#22c55e',
+    dividend:   isDark ? '#fbbf24' : '#f59e0b',
+    macro:      isDark ? '#a78bfa' : '#8b5cf6',
+    // 技術面
+    candlestick: isDark ? '#f87171' : '#ef4444',
+    trend:       isDark ? '#fb923c' : '#f97316',
+    techInd:     isDark ? '#22d3ee' : '#06b6d4',
+    // 籌碼面
+    institution: isDark ? '#2dd4bf' : '#14b8a6',
+    margin:      isDark ? '#818cf8' : '#6366f1',
+    whale:       isDark ? '#a3e635' : '#84cc16',
+    // 共用
     nodeText:   isDark ? '#1e293b' : '#ffffff',
     compose:    isDark ? '#60a5fa' : '#3b82f6',
     contrast:   isDark ? '#6b7280' : '#9ca3af',
@@ -32,9 +44,20 @@
   };
 
   var SUB_TAG_COLORS = {
+    // 基本面
     '獲利能力': COLORS.profit,
+    '償債能力': COLORS.solvency,
     '評價指標': COLORS.valuation,
-    '償債能力': COLORS.solvency
+    '股利政策': COLORS.dividend,
+    '總經':     COLORS.macro,
+    // 技術面
+    'K線型態':   COLORS.candlestick,
+    '均線與趨勢': COLORS.trend,
+    '技術指標':   COLORS.techInd,
+    // 籌碼面
+    '法人動向': COLORS.institution,
+    '信用交易': COLORS.margin,
+    '主力進出': COLORS.whale
   };
 
   // ----------------------------------------------------------

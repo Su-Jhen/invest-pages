@@ -5,9 +5,21 @@
 
 /* --- CSS Variables (light / dark) --- */
 :root {
+  /* 基本面 */
   --node-color-profit: #3b82f6;
-  --node-color-valuation: #22c55e;
   --node-color-solvency: #ec4899;
+  --node-color-valuation: #22c55e;
+  --node-color-dividend: #f59e0b;
+  --node-color-macro: #8b5cf6;
+  /* 技術面 */
+  --node-color-candlestick: #ef4444;
+  --node-color-trend: #f97316;
+  --node-color-techind: #06b6d4;
+  /* 籌碼面 */
+  --node-color-institution: #14b8a6;
+  --node-color-margin: #6366f1;
+  --node-color-whale: #84cc16;
+  /* 共用 */
   --node-text-color: #ffffff;
   --edge-compose: #3b82f6;
   --edge-contrast: #9ca3af;
@@ -18,8 +30,16 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --node-color-profit: #60a5fa;
-    --node-color-valuation: #4ade80;
     --node-color-solvency: #f472b6;
+    --node-color-valuation: #4ade80;
+    --node-color-dividend: #fbbf24;
+    --node-color-macro: #a78bfa;
+    --node-color-candlestick: #f87171;
+    --node-color-trend: #fb923c;
+    --node-color-techind: #22d3ee;
+    --node-color-institution: #2dd4bf;
+    --node-color-margin: #818cf8;
+    --node-color-whale: #a3e635;
     --node-text-color: #1e293b;
     --edge-compose: #60a5fa;
     --edge-contrast: #6b7280;
@@ -91,6 +111,14 @@ nav.container {
 .legend-title {
   font-weight: 600;
   margin-bottom: 0.5rem;
+}
+
+.legend-subtitle {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin-top: 0.4rem;
+  margin-bottom: 0.15rem;
 }
 
 .legend-section {
