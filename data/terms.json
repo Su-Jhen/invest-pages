@@ -247,6 +247,42 @@
       "target": "cash-vs-stock-dividend",
       "type": "compose",
       "label": "配股稀釋EPS"
+    },
+    {
+      "source": "stock-price",
+      "target": "pe-ratio",
+      "type": "compose",
+      "label": "分子"
+    },
+    {
+      "source": "stock-price",
+      "target": "pb-ratio",
+      "type": "compose",
+      "label": "分子"
+    },
+    {
+      "source": "stock-price",
+      "target": "dividend-yield",
+      "type": "compose",
+      "label": "分母"
+    },
+    {
+      "source": "shares-outstanding",
+      "target": "eps",
+      "type": "compose",
+      "label": "分母"
+    },
+    {
+      "source": "shares-outstanding",
+      "target": "bvps",
+      "type": "compose",
+      "label": "分母"
+    },
+    {
+      "source": "cash-vs-stock-dividend",
+      "target": "shares-outstanding",
+      "type": "compose",
+      "label": "配股增加股數"
     }
   ],
   "groups": [
@@ -1043,6 +1079,48 @@
           "key_insight": "高成長期保留現金擴廠的投資報酬率極高，且配股是吸引人才的利器（員工配股等於大紅包）。產業成熟後成長趨緩，繼續配股只會稀釋 EPS，所以台積電 2008 年後改為純現金配息。"
         }
       ]
+    },
+    {
+      "id": "stock-price",
+      "name_zh": "股價",
+      "name_en": "Stock Price",
+      "definition": "一股股票在市場上的交易價格，由買賣雙方的供需決定，隨時變動。是本益比、股價淨值比、殖利率等多項指標的核心變數。",
+      "formula": "",
+      "analogy": "",
+      "action_tw": "台股交易時間為週一至週五 9:00-13:30，可透過證交所、Yahoo 股市、Goodinfo 等查詢即時或歷史股價。",
+      "contrast": "",
+      "mnemonic": "",
+      "category": "基本面",
+      "sub_tags": [
+        "評價指標"
+      ],
+      "related": [
+        "本益比",
+        "股價淨值比",
+        "殖利率"
+      ],
+      "qa": []
+    },
+    {
+      "id": "shares-outstanding",
+      "name_zh": "流通在外股數",
+      "name_en": "Shares Outstanding",
+      "definition": "公司已發行且在外流通的總股數，是計算 EPS、每股淨值等「每股」指標的分母。股票股利（配股）會增加股數導致股本膨脹，進而稀釋每股指標。",
+      "formula": "EPS = 稅後淨利 ÷ 流通在外股數　｜　每股淨值 = 淨值 ÷ 流通在外股數",
+      "analogy": "",
+      "action_tw": "台股股票面額為 10 元。查詢：Goodinfo → 股票代號 →「基本資料」可看實收資本額與流通股數。配股 1 元 = 股數增加 10%。",
+      "contrast": "",
+      "mnemonic": "",
+      "category": "基本面",
+      "sub_tags": [
+        "獲利能力"
+      ],
+      "related": [
+        "每股盈餘",
+        "每股淨值",
+        "現金股利與股票股利"
+      ],
+      "qa": []
     }
   ]
 }
