@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>深度分析 — 台股投資金庫</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+  <nav class="container">
+    <ul>
+      <li><strong>台股投資金庫</strong></li>
+    </ul>
+    <ul>
+      <li><a href="index.html">名詞卡片</a></li>
+      <li><a href="map.html">知識地圖</a></li>
+      <li><a href="insights.html">市場觀察</a></li>
+      <li><a href="articles.html" aria-current="page">深度分析</a></li>
+    </ul>
+  </nav>
+
+  <!-- State A: 文章列表 -->
+  <div id="list-view">
+    <div class="container">
+      <nav class="search-bar">
+        <div class="search-row">
+          <span id="count" style="font-size:0.8rem;color:var(--pico-muted-color)"></span>
+          <button id="filter-toggle" class="outline">篩選 ⫶</button>
+        </div>
+        <div id="filter-panel" hidden>
+          <div class="filter-section">
+            <small><strong>分類：</strong></small>
+            <div id="category-chips" class="chips-container"></div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <main class="container" id="articles-list">
+      <p class="status-message">載入中...</p>
+    </main>
+  </div>
+
+  <!-- State B: 文章內容 -->
+  <div id="article-view" hidden>
+    <main class="container" id="articles-content">
+    </main>
+  </div>
+
+  <footer class="container">
+    <small>台股投資金庫 — 結構化學習，穩健投資</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js"
+          integrity="sha384-H+hy9ULve6xfxRkWIh/YOtvDdpXgV2fmAGQkIDTxIgZwNoaoBal14Di2YTMR6MzR"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.5/dist/purify.min.js"
+          integrity="sha384-qSFej5dZNviyoPgYJ5+Xk4bEbX8AYddxAHPuzs1aSgRiXxJ3qmyWNaPsRkpv/+x5"
+          crossorigin="anonymous"></script>
+  <script src="js/articles.js"></script>
+</body>
+</html>

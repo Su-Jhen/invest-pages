@@ -380,6 +380,105 @@
   font-size: 0.85rem;
 }
 
+/* ============================================
+   Articles 深度分析 — 專用樣式
+   ============================================ */
+
+/* --- Articles List Card --- */
+.articles-list-card {
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.15s;
+}
+
+.articles-list-card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.articles-header,
+.articles-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.articles-date {
+  font-size: 0.8rem;
+  color: var(--pico-muted-color);
+}
+
+.articles-card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.articles-summary {
+  font-size: 0.9rem;
+  color: var(--pico-muted-color);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.articles-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.articles-tag-badge {
+  padding: 0.2rem 0.5rem;
+  background: var(--pico-muted-background);
+  color: var(--pico-muted-color);
+  font-size: 0.75rem;
+  border: 1px solid var(--pico-muted-border-color);
+}
+
+/* --- Articles Content (markdown 渲染區) --- */
+.articles-content {
+  max-width: 75ch;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.articles-content table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.articles-content pre {
+  overflow-x: auto;
+  white-space: pre;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: var(--pico-muted-background);
+}
+
+.articles-content code {
+  font-size: 0.875em;
+}
+
+.articles-content blockquote {
+  border-left: 4px solid var(--pico-primary);
+  padding: 0.75rem 1rem;
+  background: var(--pico-muted-background);
+  border-radius: 0 0.5rem 0.5rem 0;
+  margin: 1rem 0;
+}
+
+.articles-content hr {
+  margin: 2rem 0;
+}
+
+/* --- Back link --- */
+.articles-back {
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
 /* --- Footer --- */
 footer {
   text-align: center;
